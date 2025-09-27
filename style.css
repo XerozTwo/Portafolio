@@ -1,0 +1,392 @@
+/* ========================================= */
+/* 0. RESET Y VARIABLES GLOBALES (ESTILO DARK/CYBER GRIS NEÓN) */
+/* ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    /* Paleta de Colores Dark / Código con Gris Neón */
+    --color-fondo: #121212; /* Fondo muy oscuro, casi negro */
+    --color-tarjeta: #1e1e1e; /* Color para tarjetas/secciones */
+    --color-principal: #ffffff; /* GRIS NEÓN / BLANCO BRILLANTE para Resaltado */
+    --color-secundario: #00aaff; /* Azul Ciber para acentos */
+    --color-texto-oscuro: #e0e0e0; /* Texto claro principal */
+    --color-claro: #ffffff; /* Blanco puro para contraste */
+
+    /* Tipografía para Estética Técnica */
+    --fuente-codigo: 'Space Mono', monospace; /* Monoespaciada para código/precisión */
+    --fuente-titulo: 'Orbitron', sans-serif; /* Futurista para encabezados */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-codigo);
+    color: var(--color-texto-oscuro);
+    background-color: var(--color-fondo);
+    line-height: 1.8; 
+}
+
+/* Contenedor central */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================= */
+/* 1. NAVEGACIÓN (HEADER) - CORREGIDA */
+/* ========================================= */
+
+header {
+    background-color: var(--color-tarjeta); 
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra con toque neón gris */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    color: var(--color-principal);
+    font-family: var(--fuente-titulo);
+    font-size: 1.6rem;
+    font-weight: 700;
+    /* Efecto neón en blanco */
+    text-shadow: 0 0 5px var(--color-principal), 0 0 10px rgba(255, 255, 255, 0.5); 
+}
+
+/* CORRECCIÓN: Para que los ítems del menú se vean en línea y sin puntos */
+header ul {
+    list-style: none; 
+    display: flex;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: var(--color-texto-oscuro);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+header ul li a:hover {
+    color: var(--color-principal);
+    text-shadow: 0 0 5px var(--color-principal);
+}
+
+/* ========================================= */
+/* 2. BOTONES GENERALES (CTAs) */
+/* ========================================= */
+
+.boton-cta, .boton-secundario {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 3px; 
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.boton-cta {
+    background-color: var(--color-principal);
+    color: var(--color-fondo); 
+    border: 2px solid var(--color-principal);
+}
+
+.boton-cta:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    color: var(--color-claro);
+    box-shadow: 0 0 10px var(--color-secundario);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--color-secundario);
+    border: 2px solid var(--color-secundario);
+}
+
+.boton-secundario:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    box-shadow: 0 0 8px var(--color-secundario);
+}
+
+/* ========================================= */
+/* 3. ESTRUCTURA DE SECCIONES Y TÍTULOS */
+/* ========================================= */
+
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 2.8rem;
+    font-family: var(--fuente-titulo);
+    margin-bottom: 50px;
+    color: var(--color-secundario);
+    text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+    border-bottom: 2px solid var(--color-principal);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* ========================================= */
+/* 4. SECCIÓN HERO (INICIO) */
+/* ========================================= */
+
+#hero {
+    background-color: var(--color-tarjeta);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-principal {
+    font-size: 5rem;
+    font-family: var(--fuente-titulo);
+    color: var(--color-principal);
+    text-shadow: 0 0 10px var(--color-principal);
+}
+
+.rol {
+    font-size: 2.5rem;
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+}
+
+/* ========================================= */
+/* 5. SECCIÓN ACERCA DE MÍ - CORREGIDA */
+/* ========================================= */
+
+.bio-grid {
+    background-color: var(--color-tarjeta);
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid var(--color-secundario); /* Borde azul */
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.foto-perfil {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-principal);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Sombra Gris Neón */
+    flex-shrink: 0;
+}
+
+.bio-texto {
+    font-size: 1.1rem;
+}
+
+.habilidades-titulo {
+    color: var(--color-principal);
+    text-transform: uppercase;
+    font-family: var(--fuente-titulo);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* CORRECCIÓN: Para que la lista de habilidades se vea limpia y sin puntos */
+.lista-habilidades {
+    list-style: none; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.lista-habilidades li {
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-secundario);
+    color: var(--color-secundario);
+    padding: 8px 15px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Estilo para las negritas HTML */
+strong {
+    color: var(--color-principal);
+    font-weight: 700;
+}
+
+
+/* ========================================= */
+/* 6. SECCIÓN PROYECTOS */
+/* ========================================= */
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.tarjeta-proyecto {
+    background-color: var(--color-tarjeta);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
+    border: 1px solid #333;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-principal);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.tarjeta-proyecto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.tarjeta-proyecto h3 {
+    padding: 15px 15px 5px;
+    color: var(--color-principal);
+    font-family: var(--fuente-titulo);
+}
+
+.descripcion-proyecto {
+    padding: 0 15px 15px;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+}
+
+.enlaces-proyecto {
+    padding: 10px 15px 20px;
+}
+
+.enlace-primario {
+    color: var(--color-principal);
+    text-decoration: none;
+    font-weight: 600;
+}
+.enlace-primario:hover {
+    text-decoration: underline;
+}
+
+.enlace-secundario {
+    color: var(--color-secundario);
+    text-decoration: none;
+    margin-left: 15px;
+}
+.enlace-secundario:hover {
+    text-decoration: underline;
+}
+
+/* ========================================= */
+/* 7. SECCIÓN CONTACTO Y FOOTER */
+/* ========================================= */
+
+#contacto {
+    background-color: var(--color-tarjeta);
+    border-top: 5px solid var(--color-secundario);
+}
+
+.contacto-intro {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.enlaces-contacto a {
+    display: inline-block;
+    margin: 0 15px;
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border: 1px solid var(--color-principal);
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.enlaces-contacto a:hover {
+    color: var(--color-fondo);
+    background-color: var(--color-principal);
+    text-shadow: none;
+}
+
+footer {
+    background-color: #000000;
+    border-top: 1px solid var(--color-secundario);
+    color: var(--color-texto-oscuro);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ========================================= */
+/* 8. RESPONSIVE DESIGN (MÓVILES) */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 3rem;
+    }
+    .rol {
+        font-size: 1.5rem;
+    }
+    
+    /* Mostrar Navegación Apilada en Móviles */
+    header nav {
+        flex-direction: column;
+    }
+
+    header ul {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    
+    /* Adaptar Acerca de Mí */
+    .bio-grid {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .foto-perfil {
+        margin-bottom: 20px;
+    }
+    
+    .lista-habilidades {
+        justify-content: center;
+    }
+
+    /* Adaptar Contacto */
+    .enlaces-contacto a {
+        display: block; 
+        margin: 10px 0;
+    }
+}
